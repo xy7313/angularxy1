@@ -43,7 +43,7 @@
             <td>{{product.releaseDate}}</td>
             <td>{{product.price | currency: 'USD' : true}}</td>
             <td>
-              <app-star [rating]="product.starRating" (ratingClicked)="ratingParentFn($Event)"></app-star>
+              <app-star [rating]="product.starRating" (ratingClicked)="ratingParentFn($event)"></app-star>
             </td>
           </tr>
         </tbody>

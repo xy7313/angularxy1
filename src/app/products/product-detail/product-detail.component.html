@@ -1,5 +1,44 @@
-<p>
-  product-detail works!
-</p>
+<button class = 'btn btn-primary' (click) = "goBack()">Product List</button>
+<br />
+<div class="panel  panel-primary" >
+  <div class="panel-heading"  >
+    Product Detail: {{product?.productName}}
+  </div>
+  <div class="panel-body">
+      <div class="table-responsive">
+       <table class="table" *ngIf='product'>
+          <tr >
+            <td>Image</td>
+            <td>
+               <img  [src]="product.imageUrl" [title] = "product.productName" [style.width.px]="imgWidth"/> 
+            </td>
+          </tr>
+          <tr>
+            <td>Name</td>
+            <td>
+              {{product.productName}}
+            </td>
+          </tr>
+          <tr>
+            <td>ID</td>
+            <td>{{product.productCode}}</td>
+          </tr>
+          <tr>
+            <td>Release Date</td>
+            <td>{{product.releaseDate}}</td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td>{{product.price | currency: 'USD' : true}}</td>
+          </tr>
+          <tr>
+            <td>Rating</td>
+            <td>
+               <app-star [rating]="product.starRating" (ratingClicked)="ratingParentFn($event)"></app-star>  
+            </td>
+          </tr>
+      </table>   
+    </div>
+  </div>
+</div> 
 
-<button class = 'btn btn-primary' (click) = "goBack()">Product list</button>

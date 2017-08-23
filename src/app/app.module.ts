@@ -9,6 +9,7 @@ import { ProductListComponent } from './products/product-list/product-list.compo
 import { ProductFilterPipe } from './products/product-filter.pipe';
 import { StarComponent } from './shared/star/star.component';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
+import { ProductServiceService } from './products/product-service.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { ProductDetailComponent } from './products/product-detail/product-detail
         { path: "**", redirectTo: "products" }
     ])
   ],
-  providers: [],
+  providers: [ProductServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
