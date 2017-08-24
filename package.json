@@ -13,8 +13,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --aot -prod",
-    "deploy": "git push origin master && git push heroku master",
-    "start": "node server.js"
+    "start": "node server.js",
+    "deploy": "git push origin master && git push heroku master"
   },
   "private": true,
   "dependencies": {
