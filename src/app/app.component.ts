@@ -9,5 +9,5 @@ import { ProductServiceService } from './products/product-service.service';
 })
 export class AppComponent {
   // title = 'app';
-  pageTitle: string = "xy";
+  pageTitle: string = "Gardening Products Management";
 }

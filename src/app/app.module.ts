@@ -10,6 +10,7 @@ import { ProductFilterPipe } from './products/product-filter.pipe';
 import { StarComponent } from './shared/star/star.component';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 import { ProductServiceService } from './products/product-service.service';
+import { WelcomeComponent } from './home/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -17,17 +18,19 @@ import { ProductServiceService } from './products/product-service.service';
     ProductListComponent,
     ProductFilterPipe,
     StarComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
+        { path: 'welcome', component: WelcomeComponent },
         { path: "products", component: ProductListComponent },
         { path: "products/:id/:productName", component: ProductDetailComponent },
-        { path: "", redirectTo: "products", pathMatch: "full" },
-        { path: "**", redirectTo: "products" }
+        { path: "", redirectTo: 'welcome', pathMatch: "full" },
+        { path: "**", redirectTo: 'welcome' }
     ])
   ],
   providers: [ProductServiceService],
